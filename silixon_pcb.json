@@ -1,0 +1,230 @@
+{
+  "board": {
+    "name": "LCD Interface PCB",
+    "version": "1.0",
+    "description": "16×2 character LCD interface board with on-off switch and backlight intensity knob",
+    "width": 80,
+    "height": 36,
+    "units": "mm",
+    "layers": 2
+  },
+  "components": [
+    {
+      "type": "switch",
+      "uid": "SW1",
+      "value": "SPST",
+      "units": "SW",
+      "pcb_position": {
+        "x": 120,
+        "y": 300,
+        "z": 20,
+        "rotation": 0,
+        "layer": "bottom"
+      },
+      "circuit_position": {
+        "x": 200,
+        "y": -80,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "1",
+        "2"
+      ],
+      "component_path": "library/FSM8JH"
+    },
+    {
+      "type": "resistor",
+      "uid": "R1",
+      "value": "10k",
+      "units": "Ω",
+      "pcb_position": {
+        "x": 580,
+        "y": 80,
+        "rotation": 0,
+        "layer": "bottom"
+      },
+      "circuit_position": {
+        "x": 200,
+        "y": -20,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "1",
+        "2"
+      ],
+      "component_path": "library/CRG0402J10K_10"
+    },
+    {
+      "type": "resistor",
+      "uid": "R2",
+      "value": "10k",
+      "units": "Ω",
+      "pcb_position": {
+        "x": 580,
+        "y": 100,
+        "rotation": 0,
+        "layer": "bottom"
+      },
+      "circuit_position": {
+        "x": 200,
+        "y": 40,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "1",
+        "2"
+      ],
+      "component_path": "library/CRG0402J10K_10"
+    },
+    {
+      "type": "capacitor",
+      "uid": "C1",
+      "value": "0.1",
+      "units": "µF",
+      "pcb_position": {
+        "x": 600,
+        "y": 140,
+        "rotation": 0,
+        "layer": "bottom"
+      },
+      "circuit_position": {
+        "x": 200,
+        "y": 20,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "1",
+        "2"
+      ],
+      "component_path": "library/C0805C103K1RAC"
+    },
+    {
+      "type": "capacitor",
+      "uid": "C2",
+      "value": "0.1",
+      "units": "µF",
+      "pcb_position": {
+        "x": 600,
+        "y": 180,
+        "rotation": 0,
+        "layer": "bottom"
+      },
+      "circuit_position": {
+        "x": 200,
+        "y": 0,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "1",
+        "2"
+      ],
+      "component_path": "library/C0805C103K1RAC"
+    },
+    {
+      "type": "lcd",
+      "uid": "U2",
+      "value": "16×2",
+      "units": "char",
+      "pcb_position": {
+        "x": 400,
+        "y": 180,
+        "z": 50,
+        "rotation": 0,
+        "layer": "top"
+      },
+      "circuit_position": {
+        "x": 120,
+        "y": 0,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "VSS",
+        "VDD",
+        "VO",
+        "RS",
+        "RW",
+        "E",
+        "DB0",
+        "DB1",
+        "DB2",
+        "DB3",
+        "DB4",
+        "DB5",
+        "DB6",
+        "DB7",
+        "A",
+        "K"
+      ],
+      "component_path": "library/RC1602B-BIW-CSV"
+    },
+    {
+      "type": "lcd",
+      "uid": "U3",
+      "value": "16×2",
+      "units": "char",
+      "pcb_position": {
+        "x": 400,
+        "y": 180,
+        "z": 50,
+        "rotation": 0,
+        "layer": "top"
+      },
+      "circuit_position": {
+        "x": 120,
+        "y": 0,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "VSS",
+        "VDD",
+        "VO",
+        "RS",
+        "RW",
+        "E",
+        "DB0",
+        "DB1",
+        "DB2",
+        "DB3",
+        "DB4",
+        "DB5",
+        "DB6",
+        "DB7",
+        "A",
+        "K"
+      ],
+      "component_path": "library/61301611121"
+    },
+    {
+      "type": "mcu",
+      "uid": "U1",
+      "value": "LPC2148FBD64",
+      "units": "MCU",
+      "pcb_position": {
+        "x": 400,
+        "y": 180,
+        "rotation": 0,
+        "layer": "bottom"
+      },
+      "circuit_position": {
+        "x": 0,
+        "y": 0,
+        "orientation": "horizontal"
+      },
+      "pins": [
+        "P0.16",
+        "P0.17",
+        "P0.18",
+        "P0.19",
+        "P0.20",
+        "P0.21",
+        "P0.22",
+        "P0.23",
+        "P0.24",
+        "P0.25",
+        "VDD",
+        "VSS"
+      ],
+      "component_path": "library/LPC2148FBD64"
+    }
+  ]
+}

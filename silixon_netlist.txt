@@ -1,0 +1,46 @@
+*====================================================================*
+* 8-bit LCD ↔ LPC2148 Interface Netlist (corrected pin-mapping)       *
+*====================================================================*
+
+*–– Power Supplies ––*
+VCC    VCC   0    DC 5V
+VDD    VDD   0    DC 3.3V
+VGND   0     0    DC 0V
+
+*–– Decoupling ––*
+C1     VCC   0    0.1uF
+C2     VDD   0    0.1uF
+
+*–– Contrast Pot ––*
+R1     VCC   VO   10k
+R2     VO    0    10k
+
+*–– LCD Module U2 (HD44780 subckt) ––*
+XU2    VSS=0   VDD=VCC  VO=VO    \
+       RS=NET_RS RW=0    E=NET_E \
+       DB0=NET_D0 DB1=NET_D1     \
+       DB2=NET_D2 DB3=NET_D3     \
+       DB4=NET_D4 DB5=NET_D5     \
+       DB6=NET_D6 DB7=NET_D7     \
+       A=LED_A   K=0             \
+       LCD_HD44780.subckt
+
+RLED   VCC     LED_A 330
+
+*–– LPC2148 MCU U1 ––*
+*   Port pin   Signal  Physical pin  *
+XU1  P0.14=NET_RS   \   ; RS on P0.14 (pin 41)  
+     P0.15=NET_E    \   ; E  on P0.15 (pin 45)  
+     P0.16=NET_D0   \   ; D0 on P0.16 (pin 46)  
+     P0.17=NET_D1   \   ; D1 on P0.17 (pin 47)  
+     P0.18=NET_D2   \   ; D2 on P0.18 (pin 53)  
+     P0.19=NET_D3   \   ; D3 on P0.19 (pin 54)  
+     P0.20=NET_D4   \   ; D4 on P0.20 (pin 55)  
+     P0.21=NET_D5   \   ; D5 on P0.21 (pin 1)  
+     P0.22=NET_D6   \   ; D6 on P0.22 (pin 2)  
+     P0.23=NET_D7   \   ; D7 on P0.23 (pin 58)  
+     VDD=VDD        \
+     VSS=0          \
+     LPC2148.subckt
+
+.END
