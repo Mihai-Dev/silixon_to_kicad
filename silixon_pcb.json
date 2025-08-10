@@ -158,43 +158,6 @@
       "component_path": "library/RC1602B-BIW-CSV"
     },
     {
-      "type": "lcd",
-      "uid": "U3",
-      "value": "16×2",
-      "units": "char",
-      "pcb_position": {
-        "x": 400,
-        "y": 180,
-        "z": 50,
-        "rotation": 0,
-        "layer": "top"
-      },
-      "circuit_position": {
-        "x": 120,
-        "y": 0,
-        "orientation": "horizontal"
-      },
-      "pins": [
-        "VSS",
-        "VDD",
-        "VO",
-        "RS",
-        "RW",
-        "E",
-        "DB0",
-        "DB1",
-        "DB2",
-        "DB3",
-        "DB4",
-        "DB5",
-        "DB6",
-        "DB7",
-        "A",
-        "K"
-      ],
-      "component_path": "library/61301611121"
-    },
-    {
       "type": "mcu",
       "uid": "U1",
       "value": "LPC2148FBD64",

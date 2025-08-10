@@ -22,8 +22,6 @@ def preamble():
         (comment (number 1) (value ""))
         )))"""
 
-def parse_components(netlist_file):
-    """Parse connections from pcb"""
 
 
     """EXAMPLE:
@@ -43,11 +41,6 @@ def parse_components(netlist_file):
       (sheetpath (names /) (tstamps /))
       (tstamp 5C64041E))"""
     
-    
-    connections = {}
-    nets = {}
-    net_list = []  # Add this to track net order
-    net_counter = 1
 
 def parse_components(json_path: str) -> str:
     """Return a KiCad (components ...) section generated from silixon_pcb.json."""
@@ -59,7 +52,7 @@ def parse_components(json_path: str) -> str:
         "resistor": "Resistor_SMD:R_0402_1005Metric",
         "capacitor": "Capacitor_SMD:C_0805_2012Metric",
         "switch": "Button_Switch_THT:SW_PUSH_6mm",
-        "lcd": "Display:LCD-Character_16x2",
+        "lcd": "Display:LCD-016N002L",
         "mcu": "Package_QFP:LQFP-64_10x10mm_P0.5mm",
     }
 
@@ -186,7 +179,7 @@ def parse_libparts(json_path: str, netlist_path: str = "silixon_netlist.txt") ->
         "resistor": "Resistor",
         "capacitor": "Capacitor",
         "switch": "Switch",
-        "lcd": "Connector",  # treat LCD like a connector-style symbol
+        "lcd": "Display",  # treat LCD like a connector-style symbol
         "mcu": "MCU"
     }
 
@@ -589,7 +582,7 @@ def build_netlist(json_path: str, netlist_path: str = "silixon_netlist.txt") -> 
         parse_libparts(json_path, netlist_path),
         parse_libraries(json_path),
         parse_nets(json_path, netlist_path),
-    ]) + "\n"
+    ]) + ")\n"
 
 if __name__ == "__main__":
     json_path = "silixon_pcb.json"
